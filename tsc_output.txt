@@ -1,0 +1,9 @@
+src/App.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/EpisodePreview.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/EpisodePreview.tsx(4,1): error TS6133: 'cn' is declared but its value is never read.
+src/components/Features.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/Features.tsx(3,1): error TS6133: 'cn' is declared but its value is never read.
+src/components/Footer.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/Hero.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/Hero.tsx(4,1): error TS6133: 'cn' is declared but its value is never read.
+src/components/Navbar.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
