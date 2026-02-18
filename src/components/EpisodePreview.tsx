@@ -28,14 +28,14 @@ export const EpisodePreview = () => {
                         In the sacred House of Life, where all knowledge is preserved, young scribe Kiya discovers that her mentor has been falsifying royal records for decades. The truth about the Battle of Kadesh—and the fate of Egypt—lies in her hands.
                     </p>
 
-                    <ul className="space-y-4 font-lato text-stone-400 pt-2">
+                    <div className="space-y-4 pt-2">
                         {[
                             "10 illustrated manga panels with cinematic visuals",
                             "Branching moral choices that affect gameplay",
                             "New characters and deep lore connections",
                             "Multiple endings based on your choices"
                         ].map((item, i) => (
-                            <motion.li
+                            <motion.div
                                 key={i}
                                 initial={{ opacity: 0, y: 10 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -46,10 +46,10 @@ export const EpisodePreview = () => {
                                 <span className="flex-shrink-0 w-5 h-5 rounded-full border border-[#D4AF37]/30 flex items-center justify-center group-hover:bg-[#D4AF37]/10 transition-colors">
                                     <Check className="w-3 h-3 text-[#D4AF37]" />
                                 </span>
-                                <span className="group-hover:text-stone-200 transition-colors">{item}</span>
-                            </motion.li>
+                                <span className="font-lato text-stone-400 group-hover:text-stone-200 transition-colors text-base">{item}</span>
+                            </motion.div>
                         ))}
-                    </ul>
+                    </div>
 
                     <motion.button
                         whileHover={{ scale: 1.02, x: 5 }}
