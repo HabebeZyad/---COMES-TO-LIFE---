@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Comes To Life - Redirecting...</title>
+    <script type="text/javascript">
+        // Single Page Apps for GitHub Pages
+        // MIT License
+        // https://github.com/rafgraph/spa-github-pages
+        var pathSegmentsToKeep = 1;
+
+        var l = window.location;
+        l.replace(
+            l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+            l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+            l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+            (l.search ? '&' + l.search.replace(/\?/g, '~q~') : '') +
+            l.hash
+        );
+    </script>
+</head>
+
+<body
+    style="background: black; color: #D4AF37; display: flex; align-items: center; justify-content: center; height: 100vh; font-family: sans-serif;">
+    <div style="text-align: center;">
+        <h1 style="font-size: 1.5rem; letter-spacing: 0.2em;">COMES TO LIFE</h1>
+        <p style="opacity: 0.6; margin-top: 1rem;">Redirecting to the correct path...</p>
+    </div>
+</body>
+
+</html>
