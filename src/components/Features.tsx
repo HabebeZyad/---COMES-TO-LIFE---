@@ -7,89 +7,102 @@ const features = [
         subtitle: "Episode 3: The Scribe Who Lied",
         description: "Experience branching narratives where your choices shape history itself. Discover secrets, confront lies, and determine the fate of ancient Egypt.",
         icon: BookOpen,
-        iconColor: "text-amber-400",
-        BgColor: "bg-amber-400/10"
+        iconColor: "text-amber-500",
+        BgColor: "bg-amber-500/10"
     },
     {
         title: "Literature & Stories",
         subtitle: "Bring History to Life",
         description: "Explore historical tales from the Old Kingdom to the Second Intermediate Period with realistic illustrations and interactive storytelling.",
         icon: ScrollText,
-        iconColor: "text-[#E6C288]",
-        BgColor: "bg-[#E6C288]/10"
+        iconColor: "text-[#B8860B]",
+        BgColor: "bg-[#B8860B]/10"
     },
     {
         title: "Interactive Period Maps",
         subtitle: "Four Eras of Egypt",
         description: "Navigate through Old Kingdom, First Intermediate, Middle Kingdom, and Second Intermediate periods with interactive maps, timelines, and key historical figures.",
         icon: Globe2,
-        iconColor: "text-cyan-400",
-        BgColor: "bg-cyan-400/10"
+        iconColor: "text-cyan-500",
+        BgColor: "bg-cyan-500/10"
     },
     {
         title: "AR Hieroglyph Scanner",
         subtitle: "Decode the Ancient Language",
         description: "Point your camera at hieroglyphs to translate, animate, and unlock hidden lore. Discover the stories carved in stone by the ancients.",
         icon: ScanLine,
-        iconColor: "text-emerald-400",
-        BgColor: "bg-emerald-400/10"
+        iconColor: "text-emerald-500",
+        BgColor: "bg-emerald-500/10"
     }
 ];
 
 export const Features = () => {
     return (
-        <section id="features" className="py-24 px-6 bg-[#050505] relative overflow-hidden">
-            <div className="max-w-7xl mx-auto">
+        <section id="features" className="py-32 px-6 bg-black relative overflow-hidden">
+            {/* Background Decorative Patterns */}
+            <div className="absolute inset-0 hieroglyph-pattern opacity-10 pointer-events-none" />
+            <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#B8860B]/5 blur-[100px] rounded-full" />
+            <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#B8860B]/5 blur-[100px] rounded-full" />
+
+            <div className="max-w-7xl mx-auto relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className="text-center mb-20"
+                    transition={{ duration: 1 }}
+                    className="text-center mb-24"
                 >
-                    <h2 className="font-cinzel text-3xl md:text-5xl text-[#D4AF37] mb-6 tracking-[0.1em]">
-                        DISCOVER THE EXPERIENCE
+                    <div className="text-[#B8860B] font-bold tracking-[0.4em] text-[10px] uppercase mb-4">Core Experiences</div>
+                    <h2 className="font-cinzel text-4xl md:text-6xl text-white mb-8 tracking-[0.2em] leading-tight">
+                        DISCOVER THE <span className="text-gold-gradient">ANCIENT WORLD</span>
                     </h2>
-                    <p className="font-lato text-stone-400 max-w-2xl mx-auto leading-relaxed text-lg">
+                    <p className="font-body text-stone-400 max-w-3xl mx-auto leading-relaxed text-xl opacity-80">
                         Four interconnected modes that bring ancient Egypt to life through interactive storytelling, cooperative gameplay, and immersive technology.
                     </p>
                     <motion.div
-                        animate={{ y: [0, 5, 0] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                        className="mt-6 text-gold/30 text-2xl font-cinzel"
+                        animate={{ y: [0, 10, 0] }}
+                        transition={{ duration: 3, repeat: Infinity }}
+                        className="mt-8 text-[#B8860B]/20 text-3xl font-cinzel"
                     >
                         ⌄
                     </motion.div>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                     {features.map((feature, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1, duration: 0.5 }}
-                            whileHover={{ y: -5 }}
-                            className="group relative p-8 rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-500 hover:border-[#D4AF37]/30 overflow-hidden"
+                            transition={{ delay: index * 0.2, duration: 0.8 }}
+                            whileHover={{ y: -10 }}
+                            className="group relative p-10 rounded-2xl glass-morphism hover:border-[#B8860B]/40 transition-all duration-700 overflow-hidden"
                         >
-                            <div className={`mb-6 inline-flex p-4 rounded-xl ${feature.BgColor} transition-all duration-500 group-hover:scale-110 shadow-lg shadow-black/20`}>
-                                <feature.icon className={`w-8 h-8 ${feature.iconColor}`} />
+                            {/* Decorative Corners */}
+                            <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#B8860B]/0 group-hover:border-[#B8860B]/40 transition-all duration-500 rounded-tl-xl" />
+                            <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#B8860B]/0 group-hover:border-[#B8860B]/40 transition-all duration-500 rounded-br-xl" />
+
+                            <div className={`mb-8 inline-flex p-5 rounded-2xl ${feature.BgColor} transition-all duration-700 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(184,134,11,0.2)]`}>
+                                <feature.icon className={`w-10 h-10 ${feature.iconColor} group-hover:animate-pulse`} />
                             </div>
 
-                            <h3 className="font-cinzel text-2xl text-white mb-2 uppercase tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">
+                            <h3 className="font-cinzel text-3xl text-white mb-3 uppercase tracking-wider group-hover:text-[#B8860B] transition-colors duration-500">
                                 {feature.title}
                             </h3>
-                            <div className={`text-[10px] font-bold ${feature.iconColor} mb-6 uppercase tracking-[0.2em] opacity-80`}>
+                            <div className={`text-[11px] font-bold ${feature.iconColor} mb-8 uppercase tracking-[0.3em] opacity-70 group-hover:opacity-100 transition-opacity`}>
                                 {feature.subtitle}
                             </div>
 
-                            <p className="font-lato text-stone-400 leading-relaxed text-base group-hover:text-stone-300 transition-colors">
+                            <p className="font-body text-stone-400 leading-relaxed text-lg group-hover:text-stone-200 transition-colors duration-500">
                                 {feature.description}
                             </p>
 
-                            {/* Refined Shine Effect */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-[#D4AF37]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                            {/* Shine Sweep Animation */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none" />
+
+                            {/* Bottom Accent */}
+                            <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-gradient-to-r from-[#B8860B] to-transparent group-hover:w-full transition-all duration-700" />
                         </motion.div>
                     ))}
                 </div>

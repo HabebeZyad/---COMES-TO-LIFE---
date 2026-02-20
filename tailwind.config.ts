@@ -137,6 +137,12 @@ export default {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
                 "shimmer-gold": "linear-gradient(90deg, transparent, hsl(var(--gold) / 0.3), transparent)",
             },
+            boxShadow: {
+                "gold-sm": "var(--shadow-gold-sm)",
+                "gold-md": "var(--shadow-gold-md)",
+                "gold-lg": "var(--shadow-gold-lg)",
+                "deep": "var(--shadow-deep)",
+            },
         },
     },
     plugins: [tailwindcssAnimate],

@@ -1,90 +1,124 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Comes To Life - v1.0.1</title>
-  <meta name="description" content="Comes to Life is an interactive digital heritage experience that reimagines Ancient Egyptian history through games, manga storytelling, and immersive technology.
-
-Visitors do not simply observe history — they influence it.
-Choices made within stories shape tombs, puzzles, and endings, reflecting the ancient belief that memory and morality define legacy.
-
-This project explores how technology can preserve the past while inviting modern audiences to actively engage with it.    
-                                                                                                                 What This Makes “Comes to Life”
-
-First Egyptian-history project where:
-
-Comics affect gameplay
-
-History reacts to player morality
-
-Tombs have narrative memory
-
-Museum + game + manga hybrid">
-  <meta name="author" content="Comes To life" />
-
-
-
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Comes To life">
-  <meta name="twitter:title" content="Comes To life">
-  <meta property="og:description" content="Comes to Life is an interactive digital heritage experience that reimagines Ancient Egyptian history through games, manga storytelling, and immersive technology.
-
-Visitors do not simply observe history — they influence it.
-Choices made within stories shape tombs, puzzles, and endings, reflecting the ancient belief that memory and morality define legacy.
-
-This project explores how technology can preserve the past while inviting modern audiences to actively engage with it.    
-                                                                                                                 What This Makes “Comes to Life”
-
-First Egyptian-history project where:
-
-Comics affect gameplay
-
-History reacts to player morality
-
-Tombs have narrative memory
-
-Museum + game + manga hybrid">
-  <meta name="twitter:description" content="Comes to Life is an interactive digital heritage experience that reimagines Ancient Egyptian history through games, manga storytelling, and immersive technology.
-
-Visitors do not simply observe history — they influence it.
-Choices made within stories shape tombs, puzzles, and endings, reflecting the ancient belief that memory and morality define legacy.
-
-This project explores how technology can preserve the past while inviting modern audiences to actively engage with it.    
-                                                                                                                 What This Makes “Comes to Life”
-
-First Egyptian-history project where:
-
-Comics affect gameplay
-
-History reacts to player morality
-
-Tombs have narrative memory
-
-Museum + game + manga hybrid">
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Egyptian Theme Styling -->
+  <meta name="theme-color" content="#B8860B" />
+  <title>COMES TO LIFE | Ancient Egypt Reimagined</title>
+  <meta name="description"
+    content="An interactive journey through ancient Egypt where history breathes, stories branch, and mysteries await your discovery." />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://habebezyad.github.io/---COMES-TO-LIFE---/" />
+  <meta property="og:title" content="COMES TO LIFE | Ancient Egypt Reimagined" />
+  <meta property="og:description" content="An interactive journey through digital humanities and ancient narratives." />
+  <meta property="og:image" content="/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="COMES TO LIFE | Ancient Egypt Reimagined" />
+  <meta property="twitter:description"
+    content="An interactive journey through digital humanities and ancient narratives." />
+
   <style>
-    .loading-gate {
+    body {
+      background-color: #000;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #loading-gate {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
       background: black;
-      color: #D4AF37;
-      height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      font-family: serif;
-      letter-spacing: 0.2em;
+      transition: opacity 0.8s ease-out, visibility 0.8s;
+    }
+
+    .gate-title {
+      color: #B8860B;
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.5em;
+      font-weight: bold;
+      text-shadow: 0 0 20px rgba(184, 134, 11, 0.4);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeInGate 1s forwards;
+    }
+
+    .gate-loader {
+      width: 40px;
+      height: 40px;
+      border: 2px solid rgba(184, 134, 11, 0.1);
+      border-top: 2px solid #B8860B;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes fadeInGate {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
   </style>
+
+  <!-- Deployment Diagnostic Script -->
+  <script>
+    window.addEventListener('error', function (e) {
+      console.error('CRITICAL ERROR:', e.message);
+      if (e.message.includes('Script error')) {
+        console.warn('Potential GitHub Pages Base Path Issue detected.');
+      }
+    });
+  </script>
 </head>
 
 <body>
-  <div id="root">
-    <div class="loading-gate">
-      LOADING EXPERIENCE...
-    </div>
+  <div id="loading-gate">
+    <div class="gate-title">COMES TO LIFE</div>
+    <div class="gate-loader"></div>
   </div>
-  <script type="module" src="src/main.tsx"></script>
+
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+
+  <script>
+    window.addEventListener('load', () => {
+      const gate = document.getElementById('loading-gate');
+      if (gate) {
+        gate.style.opacity = '0';
+        gate.style.visibility = 'hidden';
+        document.body.style.overflow = 'auto';
+      }
+    });
+  </script>
 </body>
 
 </html>
